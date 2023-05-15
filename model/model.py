@@ -12,7 +12,7 @@ class Model:
         self.device='cuda:0'
         
         # Tokenizer
-        self._tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neox-20b")
+        self.tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neox-20b")
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.tokenizer.padding_side = 'left'
 
