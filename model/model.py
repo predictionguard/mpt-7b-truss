@@ -1,5 +1,6 @@
 from typing import Dict, List
 
+import transformers
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
@@ -16,10 +17,19 @@ class Model:
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.tokenizer.padding_side = 'left'
 
+        # Attention implementation
+        config = transformers.AutoConfig.from_pretrained(
+          'mosaicml/mpt-7b',
+          trust_remote_code=True
+        )
+        config.attn_config['attn_impl'] = 'triton'
+
         # Model
         self.model = AutoModelForCausalLM.from_pretrained(
             'mosaicml/mpt-7b',
-            trust_remote_code=True
+            config=config,
+            trust_remote_code=True,
+            torch_dtype=torch.bfloat16
         )
         self.model.to(device=self.device)
         self.model.eval()

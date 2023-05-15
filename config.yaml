@@ -17,6 +17,9 @@ requirements:
   - transformers
   - torch
   - einops 
+  - flash-attn==1.0.3.post0 
+  - triton==2.0.0.dev20221202 
+  - xentropy-cuda-lib@git+https://github.com/HazyResearch/flash-attention.git@v0.2.8#subdirectory=csrc/xentropy
 resources:
   cpu: "3"
   memory: 50Gi
