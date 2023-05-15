@@ -1,6 +1,6 @@
 bundled_packages_dir: packages
 data_dir: data
-description: null
+description: Generate text with an open source LLM.
 environment_variables: {}
 examples_filename: examples.yaml
 input_type: Any
