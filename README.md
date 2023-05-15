@@ -1,4 +1,4 @@
-# MPT-7 Truss
+# MPT-7B Truss
 
 This is a [Truss](https://truss.baseten.co/) for [MPT-7B](https://www.mosaicml.com/blog/mpt-7b) using the `mosaicml/mpt-7b` from the `transformers` library. This README will walk you through how to deploy this Truss on Baseten to get your own instance of the MPT-7B.
 

@@ -1,9 +1,10 @@
 bundled_packages_dir: packages
 data_dir: data
-description: Generate text with an open source LLM.
+description: null
 environment_variables: {}
 examples_filename: examples.yaml
 input_type: Any
+live_reload: false
 model_class_filename: model.py
 model_class_name: Model
 model_framework: custom
@@ -17,11 +18,10 @@ requirements:
   - torch
   - einops 
 resources:
-  cpu: '3'
-  memory: 60Gi
+  cpu: "3"
+  memory: 50Gi
   use_gpu: true
   accelerator: A10G
 secrets: {}
 spec_version: '2.0'
 system_packages: []
-live_reload: false
