@@ -1,6 +1,6 @@
 # MPT-7B Truss
 
-This is a [Truss](https://truss.baseten.co/) for [MPT-7B](https://www.mosaicml.com/blog/mpt-7b) using the `mosaicml/mpt-7b` from the `transformers` library. This README will walk you through how to deploy this Truss on Baseten to get your own instance of the MPT-7B.
+This is a [Truss](https://truss.baseten.co/) for [MPT-7B](https://www.mosaicml.com/blog/mpt-7b) using the `mosaicml/mpt-7b` family of models from the `transformers` library. This README will walk you through how to deploy this Truss on Baseten to get your own instance of the MPT-7B (or chat, instruction, or story writer flavors of MPT).
 
 ## Truss
 
@@ -17,20 +17,22 @@ To deploy the MPT-7B Truss, you'll need to follow these steps:
 pip install --upgrade baseten truss
 ```
 
-3. __Load the MPT-7B Truss__: Assuming you've cloned this repo, spin up an IPython shell and load the Truss into memory:
+3. __Select the MPT model you want__: Make sure the MPT model flavor you want is uncommented in [model/model.py](model/model.py). You can choose the base, instruction tuned, chat, or storywriter versions of the MPT-7B model.
+
+4. __Load the MPT-7B Truss__: Assuming you've cloned this repo, spin up an IPython shell and load the Truss into memory:
 ```
 import truss
 mpt_truss = truss.load("path/to/mpt_truss")
 ```
 
-4. __Log in to Baseten__: Log in to your Baseten account using your API key (key found [here](https://app.baseten.co/settings/account/api_keys)):
+5. __Log in to Baseten__: Log in to your Baseten account using your API key (key found [here](https://app.baseten.co/settings/account/api_keys)):
 ```
 import baseten
 
 baseten.login("PASTE_API_KEY_HERE")
 ```
 
-5. __Deploy the MPT-7B Truss__: Deploy MPT-7B to Baseten with the following command:
+6. __Deploy the MPT-7B Truss__: Deploy MPT-7B to Baseten with the following command:
 ```
 baseten.deploy(mpt_truss)
 ```
