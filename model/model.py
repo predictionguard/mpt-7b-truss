@@ -1,13 +1,16 @@
 from typing import Dict, List
 
-import transformers
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
 class Model:
     def __init__(self, **kwargs) -> None:
-        #self._data_dir = kwargs["data_dir"]
-        #self._config = kwargs["config"]
+
+        # Model name (uncomment/ comment for the different MPT flavors)
+        #self.model_name = 'mosaicml/mpt-7b'
+        model_name = 'mosaicml/mpt-7b-instruct'
+        #self.model_name = 'mosaicml/mpt-7b-storywriter'
+        #self.model_name = 'mosaicml/mpt-7b-chat'
 
         # Device
         self.device='cuda:0'
@@ -19,14 +22,14 @@ class Model:
 
         # Attention implementation
         # config = transformers.AutoConfig.from_pretrained(
-        #   'mosaicml/mpt-7b',
+        #   model_name,
         #   trust_remote_code=True
         # )
         # config.attn_config['attn_impl'] = 'triton'
 
         # Model
         self.model = AutoModelForCausalLM.from_pretrained(
-            'mosaicml/mpt-7b',
+            model_name,
             #config=config,
             trust_remote_code=True,
             torch_dtype=torch.bfloat16
