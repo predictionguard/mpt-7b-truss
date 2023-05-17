@@ -17,6 +17,7 @@ requirements:
   - transformers
   - torch
   - einops 
+  - sentencepiece
 resources:
   cpu: "3"
   memory: 50Gi
