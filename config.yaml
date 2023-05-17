@@ -1,6 +1,6 @@
 bundled_packages_dir: packages
 data_dir: data
-description: null
+description: MPT-7B is an LLM in the MosaicML Foundation Series
 environment_variables: {}
 examples_filename: examples.yaml
 input_type: Any
@@ -8,7 +8,9 @@ live_reload: false
 model_class_filename: model.py
 model_class_name: Model
 model_framework: custom
-model_metadata: {}
+model_metadata:
+  tags:
+  - text-generation
 model_module_dir: model
 model_name: MPT-7B
 model_type: custom
